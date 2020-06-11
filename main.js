@@ -19,7 +19,29 @@ function getCellElements (currentRowElement) {
     return currentRowElement.querySelectorAll(".cell")
 }
 
+replaceAllButton.addEventListener('click', function () {
+    console.log("It works.")
+    let foundInstr = findInput.value 
+    let replaceInstr = replaceInput.value
+    
+    for (let counter = 0; counter < rowElements.length; counter++) {
+        let cellElement = getCellElements(rowElements[counter])
+        
+        for (let innerCounter = 0; innerCounter < cellElement.length; innerCounter++) {  
+            if (cellElement[innerCounter].innerHTML.includes(foundInstr)) {
+                
+                let newStrg = cellElement[innerCounter].innerHTML.replace(foundInstr, replaceInstr)
+               console.log(newStrg)
+                cellElement[innerCounter].innerHTML = newStrg
+            
 
+
+            }
+        }
+
+        
+    }
+})
 // YOUR CODE GOES HERE
 
 
